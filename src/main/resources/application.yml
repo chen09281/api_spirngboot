@@ -1,13 +1,15 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
+    username: chen
     password: Chen781+-/
-    url: jdbc:mysql://127.0.0.1:3306/api?useSSL=false
-
+    url: jdbc:mysql://43.136.51.126:3306/api
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.api.pojo
-appId:
-appSecret:
+appId: wxa1901bcdbb543c65
+appSecret: 2a5c910e2513cba262c0c5c003120300
 format:
+key:
+server:
+  port: 10010

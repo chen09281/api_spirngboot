@@ -4,8 +4,10 @@ import com.api.pojo.Users;
 import com.api.pojo.UsersExample;
 import java.util.List;
 
+import org.apache.catalina.User;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
 @Mapper
@@ -32,4 +34,7 @@ public interface UsersMapper {
     int updateByPrimaryKeySelective(Users record);
 
     int updateByPrimaryKey(Users record);
+
+    @Select("select * from users;")
+    List<Users> selectUser();
 }

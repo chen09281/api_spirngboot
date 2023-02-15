@@ -23,7 +23,7 @@ public class APIController {
     private String appId;
     @Value("${appSecret}")
     private String appSecret;
-    @Resource
+    @Autowired
     private ApiService apiService;
 
     /**
@@ -42,6 +42,7 @@ public class APIController {
         System.out.println(url);
         System.out.println(str);
         Map<String,String> map = (Map<String, String>) JSON.parse(str);
+//        System.out.println(map);
 
         if(map.get("openid")==null){//获取openid失败
             data.put("status", "500");
@@ -152,7 +153,7 @@ public class APIController {
         return map;
     }
 
-    @PostMapping("addClass")
+    @GetMapping("addClass")
     @ResponseBody
     public Map addClass(String openid,String name){
         Map map = new HashMap<>();

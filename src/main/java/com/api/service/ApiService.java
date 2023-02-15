@@ -10,7 +10,6 @@ import java.util.Random;
 
 import jakarta.annotation.Resource;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -294,6 +293,11 @@ public class ApiService {
 		ClassesUsersExample.Criteria criteria = example.createCriteria().andCidEqualTo(cid);
 		example.or(criteria);
 		return classesUsersMapper.deleteByExample(example );
+	}
+
+	public List<Users> selectUser(){
+		List<Users> usersList = usersMapper.selectUser();
+		return usersList;
 	}
 
 	/**
